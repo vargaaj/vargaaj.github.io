@@ -1,1 +1,152 @@
-<div>Hello world</div>
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Portfolio</title>
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
+    <header>
+      <h1>Portfolio</h1>
+    </header>
+
+    <nav>
+      <a href="#personal-projects">Personal Projects</a>
+      <a href="#class-projects">Graduate School Projects</a>
+    </nav>
+
+    <div class="content">
+      <!-- Personal Projects Section -->
+      <section id="personal-projects">
+        <h2>Personal Projects</h2>
+
+        <div class="project">
+          <div class="project-title">Caretaker (Work in Progress)</div>
+          <div class="project-description">
+            <p>
+              <strong>Description:</strong> A daycare management app designed to
+              optimize children's schedules and provide clear visibility for
+              classroom creators, streamlining the scheduling process
+            </p>
+            <strong>Key Skills:</strong>
+            <ul>
+              <li>
+                Developed the frontend and API endpoints using Next.js (NextUI
+                template for the frontend)
+              </li>
+              <li>
+                Managed data with PostgreSQL for efficient database handling
+              </li>
+              <li>
+                Hosted the application on Vercel for seamless deployment and
+                scalability
+              </li>
+            </ul>
+          </div>
+          <div class="project-images">
+            <div class="image-container">
+              <img src="screenshots/login page.png" alt="login page" />
+              <img
+                src="screenshots/configure classrooms.png"
+                alt="configure classrooms"
+              />
+            </div>
+            <div class="image-container">
+              <img src="screenshots/classroom info.png" alt="Screenshot 3" />
+              <img src="screenshots/drag and drop.png" alt="Screenshot 4" />
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- Grad School Projects Section -->
+      <section id="class-projects">
+        <h2>Graduate School Projects</h2>
+
+        <div class="class-section">
+          <h3>Parallel Systems</h3>
+          <div class="project-description">
+            <p>
+              This class offered a comprehensive foundation in the principles of
+              parallel systems, coupled with hands-on experience in a wide array
+              of both classical and contemporary methods for managing and
+              leveraging concurrency. It covered essential topics such as shared
+              memory synchronization, the architecture of parallel systems like
+              GPUs, and explored distributed parallel frameworks, providing a
+              deep understanding of the techniques used to optimize performance
+              in modern computing environments.
+            </p>
+          </div>
+          <div class="project">
+            <div class="project-title">Project 1: Prefix Scan and Barriers</div>
+            <div class="project-description">
+              <p>
+                <strong>Description:</strong>
+                This project aimed to deepen our understanding of parallel
+                prefix scan algorithms and to explore their performance when
+                using different synchronization primitives.
+              </p>
+              <strong>Key Skills:</strong>
+              <ul>
+                <li>C/C++</li>
+                <li>
+                  Utilized the Pthread library to implement multithreading,
+                  including the creation and joining of threads.
+                </li>
+                <li>
+                  Employed synchronization techniques such as locks to manage
+                  concurrent access to shared resources.
+                </li>
+                <li>Semaphore Barrier Implementation</li>
+              </ul>
+            </div>
+          </div>
+          <div class="project">
+            <div class="project-title">Project 2: KMeans with CUDA</div>
+            <div class="project-description">
+              <p>
+                <strong>Description:</strong>
+                Implemented the K-means clustering algorithm using CUDA and
+                Thrust to gain hands-on experience with GPU programming. The
+                project focused on parallelizing the algorithm, addressing
+                GPU-specific challenges like memory management (global and
+                shared memory), synchronization, and performance optimization.
+              </p>
+              <strong>Key Skills:</strong>
+              <ul>
+                <li>CUDA programming and parallelization</li>
+                <li>Thrust: C++ parallel algorithms library</li>
+                <li>Memory management and GPU optimization</li>
+                <li>Performance profiling and identifying bottlenecks</li>
+              </ul>
+            </div>
+          </div>
+          <div class="project">
+            <div class="project-title">Project 3: Prefix Scan and Barriers</div>
+            <div class="project-description">
+              <p>
+                <strong>Description:</strong>
+                The goal of this assignment was to write a program in a language
+                that restricts the programming model to simplify dealing with
+                concurrency: Google's Go. We used channels, go-routines, and
+                signaling to compute binary search tree equivalence.
+              </p>
+              <strong>Key Skills:</strong>
+              <ul>
+                <li>
+                  Gained proficiency in Google’s Go language, particularly in
+                  the context of concurrency and parallelism
+                </li>
+                <li>
+                  Used channel signaling and locks to synchronize concurrent
+                  operations and ensure correct program behavior
+                </li>
+              </ul>
+            </div>
+          </div>
+        </div>
+      </section>
+    </div>
+  </body>
+</html>
