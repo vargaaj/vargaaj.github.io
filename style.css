@@ -108,6 +108,16 @@ ul li {
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
 }
 
+video {
+  width: 300px; /* Adjust as needed */
+  height: auto;
+}
+
+.password-manager {
+  width: 100%;
+  height: auto;
+}
+
 /* Responsive Design */
 @media (max-width: 768px) {
   .project-images {
