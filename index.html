@@ -12,16 +12,88 @@
     </header>
 
     <nav>
-      <a href="#personal-projects">Personal Projects</a>
-      <a href="#class-projects">Graduate School Projects</a>
+      <a href="#personal-projects">Notable Projects</a>
+      <a href="#class-projects">Graduate School</a>
       <a href="https://github.com/vargaaj" target="_blank">GitHub</a>
     </nav>
 
     <div class="content">
       <!-- Personal Projects Section -->
       <section id="personal-projects">
-        <h2>Personal Projects</h2>
+        <h2>Notable Projects</h2>
+        <div class="project">
+          <div class="project-title">Locksmith</div>
+          <div class="project-description">
+            <p>
+              Locksmith is a password management application that is used to
+              store, update, and delete passwords and their associated
+              information in a quick and secure manner. This app was built for
+              my final project in my Android Programming graduate course. Please
+              see the demo video here:
+              <a
+                href="https://www.youtube.com/watch?v=OfhmTCFE6_EE"
+                target="_blank"
+                >Demo Video</a
+              >
+            </p>
+            <strong>Key Features:</strong>
+            <ul>
+              <li>
+                Firebase Authentication for secure user login and registration
+              </li>
+              <li>
+                Firebase Firestore for real-time database management and data
+                storage
+              </li>
+              <li>
+                Jetpack Compose for building a modern and responsive user
+                interface
+              </li>
+              <li>
+                Kotlin Coroutines for asynchronous programming and background
+                tasks
+              </li>
+              <li>
+                Compose Multiplatform for cross-platform development, allowing
+                the app to run on both Android and iOS devices
+              </li>
+              <li>Ktor for making network requests and handling API calls</li>
+              <li>
+                End-to-end password encryption for secure storage of sensitive
+                data
+              </li>
+            </ul>
+          </div>
+          <div class="project-images">
+            <div class="image-container">
+              <img
+                src="screenshots/password-manager-login.png"
+                alt="login page"
+              />
+              <img
+                src="screenshots/password-manager-entry-list-screen.png"
+                alt="entry list screen"
+              />
+            </div>
+            <div class="image-container">
+              <img
+                src="screenshots/password-manager-register.png"
+                alt="register page"
+              />
 
+              <img
+                src="screenshots/password-manager-edit.png"
+                alt="edit screen"
+              />
+            </div>
+            <div class="image-container">
+              <img
+                src="screenshots/password-manager-entry.png"
+                alt="entry screen"
+              />
+            </div>
+          </div>
+        </div>
         <div class="project">
           <div class="project-title">Caretaker (Work in Progress)</div>
           <div class="project-description">
@@ -30,7 +102,7 @@
               and provide clear visibility for classroom creators, streamlining
               the scheduling process
             </p>
-            <strong>Key Skills:</strong>
+            <strong>Key Features:</strong>
             <ul>
               <li>
                 Developed the frontend and API endpoints using Next.js (NextUI
@@ -79,7 +151,7 @@
             </video>
           </div>
         </div>
-        <div class="project">
+        <!-- <div class="project">
           <div class="project-title">Password Manager</div>
           <div class="project-description">
             <p>
@@ -99,40 +171,52 @@
               />
             </video>
           </div>
-        </div>
+        </div> -->
       </section>
 
       <!-- Grad School Projects Section -->
       <section id="class-projects">
-        <h2>Graduate School Projects</h2>
+        <h2>Graduate School</h2>
         <div class="class-section">
           <h3>Android Programming</h3>
           <div class="project-description">
             <p>
               In this class, we studied Android APIs and learned to build
               significant Android applications. The course had a practical
-              focus, with significant in-class programming, programming
-              assignments and a large project. The course was taught entirely in
-              Kotlin. While the course focuses on Android, we learned general
-              principles of software engineering and mobile app development.
+              focus, which included programming assignments and a large project.
+              The course was taught entirely in Kotlin. While the course focuses
+              on Android, we learned general principles of software engineering
+              and mobile app development.
             </p>
           </div>
           <div class="project">
-            <div class="project-title">Project 1: Peck</div>
+            <div class="project-title">Project 4: Reddit</div>
             <div class="project-description">
               <p>
                 <strong>Description:</strong>
-                The idea for the game is that the user clicks a button and a
-                sequence of English words appears in the area under the button.
-                Also, each word appears individually (with a light grey
-                background) in the game area, splayed out pretty randomly. You
-                have to click each word in the sequence order in the time
-                allotted. If you click a word out of order, the word flashes
-                red. If you click all the words in the correct order, the game
-                ends and you get points.
+                Built a Reddit clone app with core functionality including
+                browsing and switching between subreddits, searching for
+                keywords within subreddit posts, and favoriting specific posts.
+                Integrated Reddit’s API to fetch dynamic content and focused on
+                intuitive UI navigation and smooth user experience.
               </p>
               <video autoplay loop muted playsinline>
-                <source src="screenshots/peck.mp4" type="video/mp4" />
+                <source src="screenshots/reddit.mp4" type="video/mp4" />
+              </video>
+            </div>
+          </div>
+          <div class="project">
+            <div class="project-title">Project 3: Music Player</div>
+            <div class="project-description">
+              <p>
+                <strong>Description:</strong>
+                Developed a fully functional music player app featuring
+                essential playback controls including Play, Pause, Next, and
+                Previous. Implemented Shuffle and Loop functionality for
+                enhanced user experience.
+              </p>
+              <video autoplay loop muted playsinline>
+                <source src="screenshots/music player.mp4" type="video/mp4" />
               </video>
             </div>
           </div>
@@ -157,6 +241,60 @@
                 <source src="screenshots/fling.webm" type="video/webm" />
               </video>
             </div>
+          </div>
+          <div class="project">
+            <div class="project-title">Project 1: Peck</div>
+            <div class="project-description">
+              <p>
+                <strong>Description:</strong>
+                The idea for the game is that the user clicks a button and a
+                sequence of English words appears in the area under the button.
+                Also, each word appears individually (with a light grey
+                background) in the game area, splayed out pretty randomly. You
+                have to click each word in the sequence order in the time
+                allotted. If you click a word out of order, the word flashes
+                red. If you click all the words in the correct order, the game
+                ends and you get points.
+              </p>
+              <video autoplay loop muted playsinline>
+                <source src="screenshots/peck.mp4" type="video/mp4" />
+              </video>
+            </div>
+          </div>
+        </div>
+        <div class="class-section">
+          <h3>Deep Learning</h3>
+          <div class="project-description">
+            <p>
+              The graduate Deep Learning course explores both theory and
+              practice of modern deep neural networks, with heavy use of PyTorch
+              for implementation
+            </p>
+            <strong>Key topics includes:</strong>
+            <ul>
+              <li>
+                Fundamentals of linear models, logistic regression, gradients,
+                optimization, regularization, and PyTorch fundamentals
+              </li>
+              <li>
+                Design and training of deep networks, including normalization
+                techniques, residual connections, and practical hyperparameter
+                tuning
+              </li>
+              <li>
+                Deep convolutional networks: convolution, pooling, dilation,
+                up-convolutions, and design principles for vision models
+              </li>
+              <li>
+                Transformer architectures and attention mechanisms, including
+                positional embeddings and multi-head attention
+              </li>
+              <liv>
+                Emphasis on practical best practices for training large‑scale
+                models, working with overfitting, and making models work in
+                real-world conditions
+              </liv>
+            </ul>
           </div>
         </div>
 
