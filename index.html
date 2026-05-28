@@ -3,453 +3,879 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Portfolio</title>
+    <meta
+      name="description"
+      content="AJ Varga's software engineering portfolio featuring mobile apps, full-stack projects, online optimization, and graduate computer science work."
+    />
+    <title>AJ Varga | Software Engineering Portfolio</title>
     <link rel="stylesheet" href="style.css" />
   </head>
   <body>
-    <header>
-      <h1>Portfolio</h1>
+    <header class="site-header">
+      <nav class="nav-shell" aria-label="Primary navigation">
+        <a class="brand" href="#top" aria-label="AJ Varga home">AJ Varga</a>
+        <div class="nav-links">
+          <a href="#featured-projects">Projects</a>
+          <a href="#graduate-work">Graduate Work</a>
+          <a href="https://github.com/vargaaj" target="_blank" rel="noreferrer"
+            >GitHub</a
+          >
+        </div>
+      </nav>
     </header>
 
-    <nav>
-      <a href="#personal-projects">Notable Projects</a>
-      <a href="#class-projects">Graduate School</a>
-      <a href="https://github.com/vargaaj" target="_blank">GitHub</a>
-    </nav>
+    <main id="top">
+      <section class="hero section-band">
+        <div class="hero-content">
+          <p class="eyebrow">Software Engineering Portfolio</p>
+          <h1>Building practical software across AI/ML, full-stack products, and systems.</h1>
+          <p class="hero-copy">
+            I focus on shipping useful software with clear interfaces, solid
+            backend foundations, and thoughtful engineering tradeoffs.
+          </p>
+          <div class="hero-actions">
+            <a class="button primary" href="#featured-projects">View Projects</a>
+            <a
+              class="button secondary"
+              href="https://github.com/vargaaj"
+              target="_blank"
+              rel="noreferrer"
+              >GitHub Profile</a
+            >
+          </div>
+        </div>
 
-    <div class="content">
-      <!-- Personal Projects Section -->
-      <section id="personal-projects">
-        <h2>Notable Projects</h2>
-        <div class="project">
-          <div class="project-title">Locksmith</div>
-          <div class="project-description">
+        <div class="hero-panel" aria-label="Portfolio highlights">
+          <div>
+            <span class="metric">3</span>
+            <span class="metric-label">featured builds</span>
+          </div>
+          <div>
+            <span class="metric">AI/ML</span>
+            <span class="metric-label">model-driven applications</span>
+          </div>
+          <div>
+            <span class="metric">Full Stack</span>
+            <span class="metric-label">product development</span>
+          </div>
+        </div>
+      </section>
+
+      <section class="section intro">
+        <div class="section-heading">
+          <p class="eyebrow">What I Work With</p>
+          <h2>Full-stack product work backed by systems fundamentals.</h2>
+        </div>
+        <div class="skill-cloud" aria-label="Skills and technologies">
+          <span>Python</span>
+          <span>PyTorch</span>
+          <span>Natural Language Processing</span>
+          <span>Natural Language Inference</span>
+          <span>Transformers</span>
+          <span>LLMs</span>
+          <span>VLMs</span>
+          <span>LoRA</span>
+          <span>Quantization</span>
+          <span>MLflow</span>
+          <span>Next.js</span>
+          <span>Full-Stack Applications</span>
+          <span>Clerk Auth</span>
+          <span>Supabase</span>
+          <span>Vercel</span>
+          <span>PostgreSQL</span>
+          <span>FastAPI</span>
+          <span>NiceGUI</span>
+          <span>Qdrant</span>
+          <span>FastEmbed</span>
+          <span>Ollama</span>
+          <span>Jetpack Compose</span>
+          <span>Firebase</span>
+          <span>C/C++</span>
+          <span>Go</span>
+          <span>Rust</span>
+        </div>
+      </section>
+
+      <section id="featured-projects" class="section">
+        <div class="section-heading">
+          <p class="eyebrow">Featured Projects</p>
+          <h2>Applications with real workflows and working demos.</h2>
+        </div>
+
+        <article class="project-card featured">
+          <div class="project-copy">
+            <p class="project-kicker">AI + Retrieval</p>
+            <h3>Local RAG Chat</h3>
             <p>
-              Locksmith is a password management application that is used to
-              store, update, and delete passwords and their associated
-              information in a quick and secure manner. This app was built for
-              my final project in my Android Programming graduate course. Please
-              see the demo video here:
+              A local retrieval-augmented generation service for asking
+              questions over private documents. The app parses PDFs, Markdown,
+              text files, and zip uploads; chunks and embeds content locally;
+              stores searchable vectors in Qdrant; and answers with a local
+              Ollama model.
+            </p>
+            <p>
+              Built with a FastAPI backend and NiceGUI browser UI, plus MLflow
+              tracing for ingestion, retrieval, prompt assembly, and chat calls.
+              I host the MLflow tracking server and Qdrant database on my own
+              private server, with access routed through my tailnet. GPU-backed
+              FastEmbed support keeps indexing local while preserving visibility
+              into model, prompt, retrieval, and source metadata.
+            </p>
+            <div class="project-actions">
+              <a
+                href="https://github.com/vargaaj/rag"
+                target="_blank"
+                rel="noreferrer"
+                >View on GitHub</a
+              >
+            </div>
+            <ul class="tag-list" aria-label="Local RAG Chat technologies">
+              <li>FastAPI</li>
+              <li>NiceGUI</li>
+              <li>Qdrant</li>
+              <li>FastEmbed</li>
+              <li>Ollama</li>
+              <li>MLflow</li>
+              <li>CUDA</li>
+            </ul>
+          </div>
+          <div class="app-gallery" aria-label="Local RAG Chat screenshot">
+            <img
+              class="app-screenshot"
+              src="screenshots/rag-app.png"
+              alt="Local RAG Chat document ingestion and chat interface"
+            />
+          </div>
+        </article>
+
+        <article class="project-card featured">
+          <div class="project-copy">
+            <p class="project-kicker">Full-Stack Web</p>
+            <h3>Daycare App</h3>
+            <p>
+              A daycare management app designed to optimize children's
+              schedules, manage classroom setup, upload roster data, and give
+              classroom creators clear visibility into scheduling decisions.
+            </p>
+            <ul class="tag-list" aria-label="Daycare App technologies">
+              <li>Next.js</li>
+              <li>Clerk Auth</li>
+              <li>Supabase</li>
+              <li>Vercel</li>
+            </ul>
+          </div>
+          <div class="daycare-gallery" aria-label="Daycare App screenshots">
+            <img
+              class="primary-screenshot"
+              src="screenshots/daycare-app-homepage.png"
+              alt="Daycare App homepage"
+            />
+            <div class="thumbnail-row">
+              <img
+                src="screenshots/daycare-app-dashboard.png"
+                alt="Daycare App classroom scheduling dashboard"
+              />
+              <img
+                src="screenshots/daycare-app-configure.png"
+                alt="Daycare App classroom configuration"
+              />
+              <img
+                src="screenshots/daycare-app-upload.png"
+                alt="Daycare App roster upload"
+              />
+            </div>
+          </div>
+        </article>
+
+        <article class="project-card featured">
+          <div class="project-copy">
+            <p class="project-kicker">Mobile Security</p>
+            <h3>Locksmith</h3>
+            <p>
+              A password management application for storing, updating, and
+              deleting credentials and related information quickly and securely.
+              Built as the final project for a graduate Android Programming
+              course.
+            </p>
+            <div class="project-actions">
               <a
                 href="https://www.youtube.com/watch?v=OfhmTCFE6_EE"
                 target="_blank"
-                >Demo Video</a
+                rel="noreferrer"
+                >Watch Demo</a
               >
-            </p>
-            <strong>Key Features:</strong>
-            <ul>
-              <li>
-                Firebase Authentication for secure user login and registration
-              </li>
-              <li>
-                Firebase Firestore for real-time database management and data
-                storage
-              </li>
-              <li>
-                Jetpack Compose for building a modern and responsive user
-                interface
-              </li>
-              <li>
-                Kotlin Coroutines for asynchronous programming and background
-                tasks
-              </li>
-              <li>
-                Compose Multiplatform for cross-platform development, allowing
-                the app to run on both Android and iOS devices
-              </li>
-              <li>Ktor for making network requests and handling API calls</li>
-              <li>
-                End-to-end password encryption for secure storage of sensitive
-                data
-              </li>
+            </div>
+            <ul class="tag-list" aria-label="Locksmith technologies">
+              <li>Firebase Auth</li>
+              <li>Firestore</li>
+              <li>Jetpack Compose</li>
+              <li>Kotlin Coroutines</li>
+              <li>Compose Multiplatform</li>
+              <li>Ktor</li>
+              <li>End-to-end encryption</li>
             </ul>
           </div>
-          <div class="project-images">
-            <div class="image-container">
-              <img
-                src="screenshots/password-manager-login.png"
-                alt="login page"
-              />
-              <img
-                src="screenshots/password-manager-entry-list-screen.png"
-                alt="entry list screen"
-              />
-            </div>
-            <div class="image-container">
-              <img
-                src="screenshots/password-manager-register.png"
-                alt="register page"
-              />
-
-              <img
-                src="screenshots/password-manager-edit.png"
-                alt="edit screen"
-              />
-            </div>
-            <div class="image-container">
-              <img
-                src="screenshots/password-manager-entry.png"
-                alt="entry screen"
-              />
-            </div>
+          <div class="phone-gallery" aria-label="Locksmith app screenshots">
+            <img
+              src="screenshots/password-manager-login.png"
+              alt="Locksmith login screen"
+            />
+            <img
+              src="screenshots/password-manager-entry-list-screen.png"
+              alt="Locksmith saved entries screen"
+            />
+            <img
+              src="screenshots/password-manager-edit.png"
+              alt="Locksmith edit credential screen"
+            />
+            <img
+              src="screenshots/password-manager-entry.png"
+              alt="Locksmith credential detail screen"
+            />
           </div>
-        </div>
-        <div class="project">
-          <div class="project-title">Caretaker (Work in Progress)</div>
-          <div class="project-description">
-            <p>
-              A daycare management app designed to optimize children's schedules
-              and provide clear visibility for classroom creators, streamlining
-              the scheduling process
-            </p>
-            <strong>Key Features:</strong>
-            <ul>
-              <li>
-                Developed the frontend and API endpoints using Next.js (NextUI
-                template for the frontend)
-              </li>
-              <li>
-                Managed data with PostgreSQL for efficient database handling
-              </li>
-              <li>
-                Hosted the application on Vercel for seamless deployment and
-                scalability
-              </li>
-            </ul>
-          </div>
-          <div class="project-images">
-            <div class="image-container">
-              <img src="screenshots/login page.png" alt="login page" />
-              <img
-                src="screenshots/classroom info.png"
-                alt="configure classrooms"
-              />
-            </div>
-            <div class="image-container">
-              <img
-                src="screenshots/configure classrooms.png"
-                alt="Screenshot 3"
-              />
-              <img src="screenshots/drag and drop.png" alt="Screenshot 4" />
-            </div>
-          </div>
-        </div>
-        <div class="project">
-          <div class="project-title">LLM Chatbot</div>
-          <div class="project-description">
-            <p>
-              A very simple LLM Chatbot that makes use of qwen2.5-coder:3b model
-            </p>
-            <p>
-              This was built using the Python Gradio and Ollama packages. The
-              application currently stores chat history in a JSON file. The goal
-              was to create a simple chatbot to test the qwen2.5-coder:3b LLM
-              model and build a full-stack LLM Chatbot application.
-            </p>
-            <video autoplay loop muted playsinline class="llm-chatbot">
-              <source src="screenshots/llm-chatbot-demo.mp4" type="video/mp4" />
-            </video>
-          </div>
-        </div>
-        <!-- <div class="project">
-          <div class="project-title">Password Manager</div>
-          <div class="project-description">
-            <p>
-              A password manager application where you can create, read, update,
-              and delete passwords
-            </p>
-            <p>
-              This was built using Angular for the frontend and Express.js for
-              the backend. The application currently stores passwords in a json
-              file. The goal was to create a simple password manager to practice
-              CRUD operations and build a full-stack application using Angular.
-            </p>
-            <video autoplay loop muted playsinline class="password-manager">
-              <source
-                src="screenshots/angular-crud-demo.mp4"
-                type="video/mp4"
-              />
-            </video>
-          </div>
-        </div> -->
+        </article>
       </section>
 
-      <!-- Grad School Projects Section -->
-      <section id="class-projects">
-        <h2>Graduate School</h2>
-        <div class="class-section">
-          <h3>Android Programming</h3>
-          <div class="project-description">
+      <section id="graduate-work" class="section graduate-section">
+        <div class="section-heading">
+          <p class="eyebrow">Graduate School</p>
+          <h2>
+            Coursework spanning systems, AI/ML, optimization, and application
+            development.
+          </h2>
+        </div>
+
+        <article class="course-block">
+          <div class="course-summary">
+            <p class="project-kicker">PyTorch + Frontier Models</p>
+            <h3>Advances in Deep Learning</h3>
             <p>
-              In this class, we studied Android APIs and learned to build
-              significant Android applications. The course had a practical
-              focus, which included programming assignments and a large project.
-              The course was taught entirely in Kotlin. While the course focuses
-              on Android, we learned general principles of software engineering
-              and mobile app development.
+              Covered advanced deep learning topics including memory-efficient
+              optimization, generative models such as diffusion and
+              auto-regressive generation, and frontier models in language and
+              computer vision. Projects focused on implementing core model
+              components, training pipelines, and data generation workflows in
+              PyTorch.
             </p>
           </div>
-          <div class="project">
-            <div class="project-title">Project 4: Reddit</div>
-            <div class="project-description">
+
+          <div class="deep-learning-grid">
+            <article class="deep-learning-card">
+              <h4>Assignment 1: Low-Memory Training and Inference</h4>
               <p>
-                <strong>Description:</strong>
-                Built a Reddit clone app with core functionality including
-                browsing and switching between subreddits, searching for
-                keywords within subreddit posts, and favoriting specific posts.
-                Integrated Reddit’s API to fetch dynamic content and focused on
-                intuitive UI navigation and smooth user experience.
+                Implemented memory-efficient versions of a large BigNet model
+                while keeping outputs close to the original network and
+                supporting automated forward and training checks.
               </p>
-              <video autoplay loop muted playsinline>
+              <ul class="detail-list">
+                <li>
+                  Rebuilt linear layers for half-precision inference while
+                  preserving checkpoint-loading compatibility.
+                </li>
+                <li>
+                  Added LoRA adapters on a frozen half-precision base so only
+                  low-rank float32 parameters were trained.
+                </li>
+                <li>
+                  Implemented 4-bit block quantization, state-dict loading
+                  hooks, dequantization during forward passes, and QLoRA on top
+                  of quantized weights.
+                </li>
+              </ul>
+            </article>
+
+            <article class="deep-learning-card">
+              <h4>Assignment 2: Auto-Regressive Image Generation</h4>
+              <p>
+                Built a generative image pipeline for SuperTuxKart images that
+                also served as a learned image compression workflow.
+              </p>
+              <ul class="detail-list">
+                <li>
+                  Implemented a patch-level autoencoder to encode and decode
+                  images through compact patch embeddings.
+                </li>
+                <li>
+                  Added Binary Spherical Quantization to convert image patches
+                  into discrete token IDs.
+                </li>
+                <li>
+                  Trained a causal auto-regressive model over image tokens,
+                  implemented sample generation, and prepared the optional
+                  compression path.
+                </li>
+              </ul>
+            </article>
+
+            <article class="deep-learning-card">
+              <h4>Assignment 3: LLM Unit Conversion</h4>
+              <p>
+                Adapted SmolLM2 to solve unit-conversion questions with direct
+                prompting, chain-of-thought reasoning, supervised fine-tuning,
+                and rejection-sampling fine-tuning.
+              </p>
+              <ul class="detail-list">
+                <li>
+                  Implemented sequential and batched text generation with
+                  tokenizer padding, attention masks, and decoded outputs.
+                </li>
+                <li>
+                  Designed chat-template prompts for in-context reasoning and
+                  answer extraction.
+                </li>
+                <li>
+                  Fine-tuned LoRA adapters with Hugging Face Trainer, then
+                  generated and filtered reasoning traces for RFT training data.
+                </li>
+              </ul>
+            </article>
+
+            <article class="deep-learning-card">
+              <h4>Assignment 4: Vision-Language Models for Tux</h4>
+              <p>
+                Fine-tuned multimodal models on SuperTuxKart image data and
+                built a simplified CLIP-style model for visual question
+                answering.
+              </p>
+              <ul class="detail-list">
+                <li>
+                  Generated expanded image, question, and answer datasets from
+                  SuperTuxKart metadata for VLM fine-tuning.
+                </li>
+                <li>
+                  Created paired image-caption data for contrastive training.
+                </li>
+                <li>
+                  Built a CLIP model using the VLM vision encoder and language
+                  model as encoders, then trained it for multiple-choice
+                  question answering.
+                </li>
+              </ul>
+            </article>
+          </div>
+        </article>
+
+        <article class="course-block">
+          <div class="course-summary">
+            <p class="project-kicker">NLP + Structured Prediction</p>
+            <h3>Natural Language Processing</h3>
+            <p>
+              Completed a survey of modern natural language processing covering
+              the field in two connected ways: the main academic and industry
+              applications of NLP, plus enough linguistics to understand why
+              those problems are challenging. The course also covered structured
+              prediction and deep learning models including classifiers,
+              sequence models, statistical parsers, neural network encoders, and
+              encoder-decoder models, with attention to inference, parameter
+              estimation, and optimization. Programming work focused on building
+              scalable machine learning systems for practical NLP tasks.
+            </p>
+          </div>
+
+          <div class="nlp-grid">
+            <article class="nlp-card">
+              <h4>Assignment 1: Linear Sentiment Classification</h4>
+              <p>
+                Built sparse feature-based sentiment classifiers for movie
+                review data, using hand-engineered text features and classic
+                online learning algorithms.
+              </p>
+              <ul class="detail-list">
+                <li>
+                  Implemented unigram, bigram, and cleaned bigram feature
+                  extractors with an indexed sparse representation.
+                </li>
+                <li>
+                  Trained perceptron and logistic regression classifiers with
+                  stochastic updates over labeled sentiment examples.
+                </li>
+                <li>
+                  Generated blind test predictions after evaluating accuracy,
+                  precision, recall, and F1 on train and development data.
+                </li>
+              </ul>
+            </article>
+
+            <article class="nlp-card">
+              <h4>Assignment 2: Neural Sentiment Classification</h4>
+              <p>
+                Rebuilt sentiment analysis with a PyTorch Deep Averaging
+                Network over pretrained GloVe embeddings.
+              </p>
+              <ul class="detail-list">
+                <li>
+                  Created a trainable embedding-backed classifier with averaged
+                  word vectors, ReLU hidden layers, cross-entropy loss, and Adam
+                  optimization.
+                </li>
+                <li>
+                  Added padded mini-batch training for variable-length
+                  sentences and reusable prediction wrappers for evaluation.
+                </li>
+                <li>
+                  Added typo-aware inference that maps unknown words to nearby
+                  embedding-vocabulary candidates using edit distance.
+                </li>
+              </ul>
+            </article>
+
+            <article class="nlp-card">
+              <h4>Assignment 3: Transformers and Character Language Modeling</h4>
+              <p>
+                Implemented Transformer components for both sequence labeling
+                and character-level language modeling.
+              </p>
+              <ul class="detail-list">
+                <li>
+                  Built a Transformer encoder with learned positional
+                  embeddings, query-key-value self-attention, residual
+                  connections, layer normalization, and feed-forward layers.
+                </li>
+                <li>
+                  Trained the model on letter-counting sequence labels and
+                  emitted attention visualizations for inspection.
+                </li>
+                <li>
+                  Implemented a causal Transformer language model over text8
+                  characters with sequence log-probability scoring, normalized
+                  probability checks, and perplexity evaluation.
+                </li>
+              </ul>
+            </article>
+
+            <article class="nlp-card">
+              <h4>Assignment 4: Retrieval-Based Fact Checking</h4>
+              <p>
+                Built fact checkers that decide whether retrieved Wikipedia
+                passages support or fail to support atomic factual claims.
+              </p>
+              <ul class="detail-list">
+                <li>
+                  Implemented a ROUGE-1 recall baseline that compares claim
+                  tokens against retrieved passage text.
+                </li>
+                <li>
+                  Used a pretrained NLI entailment model to score passage
+                  sentences against facts and threshold support decisions.
+                </li>
+                <li>
+                  Produced an error analysis report grouping mistakes into
+                  semantic similarity, implicit world knowledge, document
+                  structure, and time-period ambiguity categories.
+                </li>
+              </ul>
+            </article>
+
+            <article class="nlp-card final-paper-card">
+              <h4>Final Project: Adversarial Fine-Tuning for NLI Robustness</h4>
+              <p>
+                Wrote a final paper studying whether adversarial fine-tuning
+                improves natural language inference robustness. The project
+                fine-tuned ELECTRA-small from SNLI into progressive ANLI rounds
+                and compared the resulting models with accuracy, confusion
+                matrices, curated reasoning categories, and length-bias
+                analyses.
+              </p>
+              <ul class="detail-list">
+                <li>
+                  Showed ANLI dev accuracy improving from 31.3% for the
+                  SNLI-only baseline to 40.6% after r1+r2+r3 adversarial
+                  fine-tuning.
+                </li>
+                <li>
+                  Found that SNLI dev accuracy stayed nearly unchanged, with the
+                  extra SNLI plus ANLI model retaining 89.6% versus 89.7% for
+                  the SNLI-only baseline.
+                </li>
+                <li>
+                  Analyzed how adversarial training reduced neutral-label
+                  collapse and mitigated length-based shortcut behavior while
+                  preserving in-domain performance.
+                </li>
+              </ul>
+              <div class="project-actions">
+                <a
+                  href="nlp/NLP_Final_Project%20%2816%29.pdf"
+                  target="_blank"
+                  rel="noreferrer"
+                  >Read Final Paper</a
+                >
+              </div>
+            </article>
+          </div>
+        </article>
+
+        <article class="course-block">
+          <div class="course-summary">
+            <p class="project-kicker">Kernel + Systems</p>
+            <h3>Advanced Operating Systems</h3>
+            <p>
+              Studied the formal structure, design principles, organization,
+              implementation, and performance analysis of multiprogramming and
+              multiprocessor computer systems. The course centered on three
+              operating systems themes: virtualizing the CPU, virtualizing
+              memory, and virtualizing storage, with lectures based on textbook
+              chapters and selected research papers.
+            </p>
+          </div>
+          <div class="os-project-grid">
+            <article class="os-project-card">
+              <h4>Project 0A: Wish Shell</h4>
+              <p>
+                Built a small Unix-like shell to understand how command-line
+                interfaces coordinate processes, paths, input modes, and command
+                execution.
+              </p>
+              <ul class="detail-list">
+                <li>
+                  Implemented command parsing and execution flow for interactive
+                  and batch workflows.
+                </li>
+                <li>
+                  Added shell-level behavior for navigation, executable search
+                  paths, output redirection, and running multiple commands from
+                  one input line.
+                </li>
+                <li>
+                  Focused on robust error handling and process management in a
+                  C/Linux environment.
+                </li>
+              </ul>
+            </article>
+
+            <article class="os-project-card">
+              <h4>Project 0B: Intro to Pintos</h4>
+              <p>
+                Used a focused Pintos warm-up to learn how the kernel codebase
+                represents threads and shared data structures.
+              </p>
+              <ul class="detail-list">
+                <li>
+                  Explored the Pintos build and test workflow, documentation,
+                  and project submission process.
+                </li>
+                <li>
+                  Worked with kernel list abstractions and thread metadata.
+                </li>
+                <li>
+                  Produced a small patch against the OS codebase while
+                  preserving the original source for comparison.
+                </li>
+              </ul>
+            </article>
+
+            <article class="os-project-card">
+              <h4>Project 1: Threads</h4>
+              <p>
+                Extended Pintos threading to make the scheduler and
+                synchronization primitives behave more like a real kernel.
+              </p>
+              <ul class="detail-list">
+                <li>
+                  Replaced inefficient sleep behavior with blocking and wakeup
+                  logic driven by timer interrupts.
+                </li>
+                <li>
+                  Added priority-aware scheduling across ready queues and
+                  synchronization waiters.
+                </li>
+                <li>
+                  Implemented priority donation to reduce priority inversion in
+                  lock-heavy workloads.
+                </li>
+                <li>
+                  Balanced correctness with minimal interrupt disabling and no
+                  busy waiting.
+                </li>
+              </ul>
+            </article>
+
+            <article class="os-project-card">
+              <h4>Project 2: User Programs</h4>
+              <p>
+                Built the boundary between user programs and the Pintos kernel
+                so user code could run safely and interact with OS services.
+              </p>
+              <ul class="detail-list">
+                <li>
+                  Added process startup support, argument passing, and
+                  parent-child lifecycle coordination.
+                </li>
+                <li>
+                  Implemented a system-call layer for process control and file
+                  operations.
+                </li>
+                <li>
+                  Managed per-process resources such as file descriptors and
+                  executable state.
+                </li>
+                <li>
+                  Hardened the kernel against invalid user memory and concurrent
+                  file system access.
+                </li>
+              </ul>
+            </article>
+
+            <article class="os-project-card">
+              <h4>Project 3: Virtual Memory</h4>
+              <p>
+                Added demand-paged virtual memory so Pintos could load, evict,
+                and restore user pages as needed.
+              </p>
+              <ul class="detail-list">
+                <li>
+                  Designed data structures to track virtual pages, physical
+                  frames, and swap space.
+                </li>
+                <li>
+                  Loaded executable and stack pages lazily on page faults.
+                </li>
+                <li>
+                  Added page replacement, eviction, swap-backed recovery, stack
+                  growth, and cleanup on process exit.
+                </li>
+                <li>
+                  Coordinated VM behavior with kernel I/O so user buffers
+                  remained safe while devices accessed them.
+                </li>
+              </ul>
+            </article>
+
+            <article class="os-project-card">
+              <h4>Project 4: File Systems</h4>
+              <p>
+                Expanded the Pintos storage layer into a more complete file
+                system with growth, hierarchy, persistence, and concurrency.
+              </p>
+              <ul class="detail-list">
+                <li>
+                  Reworked file layout to support growing and sparse files
+                  without relying on contiguous disk extents.
+                </li>
+                <li>
+                  Added hierarchical directories, path traversal, and
+                  per-process working directories.
+                </li>
+                <li>
+                  Extended file-system behavior to support directory operations
+                  and metadata queries.
+                </li>
+                <li>
+                  Improved synchronization so independent file and directory
+                  activity could proceed safely in parallel.
+                </li>
+              </ul>
+            </article>
+          </div>
+        </article>
+
+        <article class="course-block">
+          <div class="course-summary">
+            <p class="project-kicker">Kotlin + Mobile</p>
+            <h3>Android Programming</h3>
+            <p>
+              Studied Android APIs and built practical applications in Kotlin,
+              with an emphasis on mobile software engineering and polished user
+              experiences.
+            </p>
+          </div>
+          <div class="assignment-grid">
+            <article class="assignment-card">
+              <video autoplay loop muted playsinline aria-label="Reddit clone demo">
                 <source src="screenshots/reddit.mp4" type="video/mp4" />
               </video>
-            </div>
-          </div>
-          <div class="project">
-            <div class="project-title">Project 3: Music Player</div>
-            <div class="project-description">
+              <h4>Project 4: Reddit</h4>
               <p>
-                <strong>Description:</strong>
-                Developed a fully functional music player app featuring
-                essential playback controls including Play, Pause, Next, and
-                Previous. Implemented Shuffle and Loop functionality for
-                enhanced user experience.
+                Built a Reddit clone with subreddit browsing, keyword search,
+                favoriting, and Reddit API integration.
               </p>
-              <video autoplay loop muted playsinline>
+            </article>
+
+            <article class="assignment-card">
+              <video autoplay loop muted playsinline aria-label="Music player demo">
                 <source src="screenshots/music player.mp4" type="video/mp4" />
               </video>
-            </div>
-          </div>
-          <div class="project">
-            <div class="project-title">Project 2: Fling</div>
-            <div class="project-description">
+              <h4>Project 3: Music Player</h4>
               <p>
-                <strong>Description:</strong>
-                This project involves developing an interactive Android game
-                with two modes: Jump and Fling. The Jump mode requires a puck to
-                move between four predetermined positions upon user interaction,
-                ensuring precise alignment with the game area's borders. The
-                Fling mode introduces physics-based movement where the puck must
-                be flung into a randomly selected green goal border within a
-                countdown timer to score points. The puck follows realistic
-                motion with friction and elastic collisions upon hitting
-                non-goal borders. The application maintains state persistence
-                when switching between modes and is built as a single-activity
-                Android application.
+                Developed playback controls including play, pause, next,
+                previous, shuffle, and loop behavior.
               </p>
-              <video autoplay loop muted playsinline>
+            </article>
+
+            <article class="assignment-card">
+              <video autoplay loop muted playsinline aria-label="Fling game demo">
                 <source src="screenshots/fling.webm" type="video/webm" />
               </video>
-            </div>
-          </div>
-          <div class="project">
-            <div class="project-title">Project 1: Peck</div>
-            <div class="project-description">
+              <h4>Project 2: Fling</h4>
               <p>
-                <strong>Description:</strong>
-                The idea for the game is that the user clicks a button and a
-                sequence of English words appears in the area under the button.
-                Also, each word appears individually (with a light grey
-                background) in the game area, splayed out pretty randomly. You
-                have to click each word in the sequence order in the time
-                allotted. If you click a word out of order, the word flashes
-                red. If you click all the words in the correct order, the game
-                ends and you get points.
+                Created an Android game with jump and fling modes, elastic
+                collisions, friction, scoring, and state persistence.
               </p>
-              <video autoplay loop muted playsinline>
+            </article>
+
+            <article class="assignment-card">
+              <video autoplay loop muted playsinline aria-label="Peck game demo">
                 <source src="screenshots/peck.mp4" type="video/mp4" />
               </video>
-            </div>
+              <h4>Project 1: Peck</h4>
+              <p>
+                Built a timed word-order game with randomized word placement,
+                sequence validation, visual feedback, and scoring.
+              </p>
+            </article>
           </div>
-        </div>
-        <div class="class-section">
-          <h3>Deep Learning</h3>
-          <div class="project-description">
-            <p>
-              The graduate Deep Learning course explores both theory and
-              practice of modern deep neural networks, with heavy use of PyTorch
-              for implementation
-            </p>
-            <strong>Key topics includes:</strong>
-            <ul>
-              <li>
-                Fundamentals of linear models, logistic regression, gradients,
-                optimization, regularization, and PyTorch fundamentals
-              </li>
-              <li>
-                Design and training of deep networks, including normalization
-                techniques, residual connections, and practical hyperparameter
-                tuning
-              </li>
-              <li>
-                Deep convolutional networks: convolution, pooling, dilation,
-                up-convolutions, and design principles for vision models
-              </li>
-              <li>
-                Transformer architectures and attention mechanisms, including
-                positional embeddings and multi-head attention
-              </li>
-              <liv>
-                Emphasis on practical best practices for training large‑scale
-                models, working with overfitting, and making models work in
-                real-world conditions
-              </liv>
-            </ul>
-          </div>
-        </div>
+        </article>
 
-        <div class="class-section">
-          <h3>Parallel Systems</h3>
-          <div class="project-description">
+        <article class="course-block">
+          <div class="course-summary">
+            <p class="project-kicker">Concurrency + Performance</p>
+            <h3>Parallel Systems</h3>
             <p>
-              This class offered a comprehensive foundation in the principles of
-              parallel systems, coupled with hands-on experience in a wide array
-              of both classical and contemporary methods for managing and
-              leveraging concurrency. It covered essential topics such as shared
-              memory synchronization, the architecture of parallel systems like
-              GPUs, and explored distributed parallel frameworks, providing a
-              deep understanding of the techniques used to optimize performance
-              in modern computing environments.
+              Studied shared memory synchronization, GPU architecture,
+              distributed frameworks, and techniques for performance-focused
+              concurrent software.
             </p>
           </div>
-          <div class="project">
-            <div class="project-title">Project 1: Prefix Scan and Barriers</div>
-            <div class="project-description">
+          <div class="systems-grid">
+            <article>
+              <h4>Prefix Scan and Barriers</h4>
               <p>
-                <strong>Description:</strong>
-                This project aimed to deepen our understanding of parallel
-                prefix scan algorithms and to explore their performance when
-                using different synchronization primitives.
+                Implemented parallel prefix scan algorithms with Pthreads,
+                locks, and semaphore barrier synchronization.
               </p>
-              <strong>Key Skills:</strong>
-              <ul>
-                <li>C/C++</li>
-                <li>
-                  Utilized the Pthread library to implement multithreading,
-                  including the creation and joining of threads.
-                </li>
-                <li>
-                  Employed synchronization techniques such as locks to manage
-                  concurrent access to shared resources.
-                </li>
-                <li>Semaphore Barrier Implementation</li>
-              </ul>
-            </div>
+            </article>
+            <article>
+              <h4>K-Means with CUDA</h4>
+              <p>
+                Parallelized K-means using CUDA and Thrust, focusing on memory
+                management, synchronization, and profiling.
+              </p>
+            </article>
+            <article>
+              <h4>BST Equivalence with Go</h4>
+              <p>
+                Used goroutines, channels, and signaling to compute binary
+                search tree equivalence concurrently.
+              </p>
+            </article>
+            <article>
+              <h4>Two-Phase Commit in Rust</h4>
+              <p>
+                Implemented 2PC across multiple processes using Rust's type
+                system and the ipc-channel crate.
+              </p>
+            </article>
+            <article>
+              <h4>Barnes-Hut with MPI</h4>
+              <p>
+                Built an N-body simulation using Barnes-Hut, C++, MPI, and
+                quadtree-based spatial partitioning.
+              </p>
+            </article>
           </div>
-          <div class="project">
-            <div class="project-title">Project 2: KMeans with CUDA</div>
-            <div class="project-description">
-              <p>
-                <strong>Description:</strong>
-                Implemented the K-means clustering algorithm using CUDA and
-                Thrust to gain hands-on experience with GPU programming. The
-                project focused on parallelizing the algorithm, addressing
-                GPU-specific challenges like memory management (global and
-                shared memory), synchronization, and performance optimization.
-              </p>
-              <strong>Key Skills:</strong>
-              <ul>
-                <li>CUDA programming and parallelization</li>
-                <li>Thrust: C++ parallel algorithms library</li>
-                <li>Memory management and GPU optimization</li>
-                <li>Performance profiling and identifying bottlenecks</li>
-              </ul>
-            </div>
-          </div>
-          <div class="project">
-            <div class="project-title">Project 3: BST Equivalence with GO</div>
-            <div class="project-description">
-              <p>
-                <strong>Description:</strong>
-                The goal of this assignment was to write a program in a language
-                that restricts the programming model to simplify dealing with
-                concurrency: Google's Go. We used channels, go-routines, and
-                signaling to compute binary search tree equivalence.
-              </p>
-              <strong>Key Skills:</strong>
-              <ul>
-                <li>
-                  Gained proficiency in Google’s Go language, particularly in
-                  the context of concurrency and parallelism
-                </li>
-                <li>
-                  Used channel signaling and locks to synchronize concurrent
-                  operations and ensure correct program behavior
-                </li>
-              </ul>
-            </div>
-          </div>
-          <div class="project">
-            <div class="project-title">
-              Project 4: Rust 2 Two-Phase Commit (2PC)
-            </div>
-            <div class="project-description">
-              <p>
-                <strong>Description:</strong>
-                The goal of this project was to gain exposure to using
-                programming tools that leverage language-level type systems to
-                manage concurrency and provide safety guarantees. We implemented
-                2PC across multiple processes communicating with each other
-                using the inter-process communication offered by the ipc-channel
-                crate.
-              </p>
-              <strong>Key Skills:</strong>
-              <ul>
-                <li>
-                  Gained foundational knowledge of implementing distributed
-                  protocols like the two-phase commit (2PC).
-                </li>
-                <li>
-                  Learned how to effectively manage concurrency and safety using
-                  Rust's ownership model and type system.
-                </li>
-                <li>
-                  Used the ipc-channel crates for communication between multiple
-                  processes, gaining understanding of its mechanisms and
-                  limitations.
-                </li>
-                <li>
-                  Improved proficiency in Rust, including memory safety, type
-                  guarantees, and idiomatic use of the language's concurrency
-                  paradigm.
-                </li>
-              </ul>
-            </div>
-          </div>
-          <div class="project">
-            <div class="project-title">
-              Project 5: Barnes-Hut Using Message Passing Interface (MPI)
-            </div>
-            <div class="project-description">
-              <p>
-                <strong>Description:</strong>
-                In this project, we implemented an astrophysical N-body
-                simulation using the Barnes-Hut algorithm in C++ with MPI
-                (Message Passing Interface) to enable parallel computation. The
-                Barnes-Hut algorithm is an efficient O(n log n) solution for
-                N-body problems, leveraging a hierarchical tree structure to
-                approximate gravitational forces between celestial bodies. Our
-                implementation involved constructing a quadtree (for 2D
-                simulation) to spatially partition the system and compute force
-                interactions based on the Multipole Acceptance Criteria (MAC).
-              </p>
-              <strong>Key Skills:</strong>
-              <ul>
-                <li>
-                  Gained proficiency in distributing computation and managing
-                  communication across multiple processes using the Message
-                  Passing Interface in C++.
-                </li>
+        </article>
 
-                <li>
-                  Implementation of quadtree structures for spatial partitioning
-                  and efficient force calculation.
-                </li>
-              </ul>
-            </div>
+        <article class="course-block">
+          <div class="course-summary">
+            <p class="project-kicker">Optimization + Bandits</p>
+            <h3>Online Learning &amp; Optimization</h3>
+            <p>
+              Completed a graduate-level course on convex optimization methods
+              for machine learning and online decision-making under uncertainty.
+              The optimization half covered first-order methods, proximal
+              gradient, Frank-Wolfe, mirror descent, acceleration, stochastic
+              gradient methods, and Newton/quasi-Newton methods with convergence
+              analysis. The online learning half focused on stochastic and
+              adversarial multi-armed bandits, especially the exploration versus
+              exploitation tradeoff behind A/B testing, recommendation systems,
+              resource allocation, reinforcement learning, and autonomous
+              systems.
+            </p>
           </div>
-        </div>
+
+          <div class="homework-grid">
+            <article class="homework-card">
+              <h4>Gradient + Subgradient Descent</h4>
+              <p>
+                Implemented gradient descent on quadratic objectives and
+                subgradient descent for LASSO, including step-size tuning and
+                convergence plots.
+              </p>
+            </article>
+
+            <article class="homework-card">
+              <h4>AGD, ISTA, and FISTA</h4>
+              <p>
+                Implemented accelerated gradient descent, ISTA, FISTA, and
+                logistic regression optimization, then compared convergence
+                behavior.
+              </p>
+            </article>
+
+            <article class="homework-card">
+              <h4>Frank-Wolfe + Mirror Descent</h4>
+              <p>
+                Implemented Frank-Wolfe for constrained LASSO and compared
+                projected subgradient descent with mirror descent for robust
+                regression.
+              </p>
+            </article>
+
+            <article class="homework-card">
+              <h4>SGD + SVRG</h4>
+              <p>
+                Implemented GD, SGD, and SVRG for logistic regression, then
+                optimized sparse newsgroup classification with minibatch SGD and
+                momentum.
+              </p>
+            </article>
+
+            <article class="homework-card">
+              <h4>Explore-Then-Commit</h4>
+              <p>
+                Implemented reward simulation, the ETC bandit algorithm,
+                cumulative regret tracking, and regret-versus-horizon plots.
+              </p>
+            </article>
+
+            <article class="homework-card">
+              <h4>Epsilon-Greedy</h4>
+              <p>
+                Implemented epsilon-greedy action selection, empirical mean
+                updates, decaying exploration, and expected cumulative regret
+                plots.
+              </p>
+            </article>
+
+            <article class="homework-card">
+              <h4>Elimination</h4>
+              <p>
+                Implemented epoch-based arm elimination with active-set updates,
+                empirical means, cumulative regret tracking, and logarithmic
+                regret checks.
+              </p>
+            </article>
+
+            <article class="homework-card">
+              <h4>UCB</h4>
+              <p>
+                Implemented Upper Confidence Bound arm selection, confidence
+                updates, regret tracking, and standard and semilog regret
+                plots.
+              </p>
+            </article>
+
+            <article class="homework-card">
+              <h4>EXP3</h4>
+              <p>
+                Implemented EXP3 with exponential-weight probabilities,
+                importance-weighted reward estimates, regret tracking, and
+                regret plots.
+              </p>
+            </article>
+          </div>
+        </article>
       </section>
-    </div>
+    </main>
   </body>
 </html>

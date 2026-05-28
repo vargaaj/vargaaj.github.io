@@ -1,0 +1,29 @@
+# Ignore everything by default.
+/*
+
+# Keep source files for the static site.
+!/.gitignore
+!/*.html
+!/*.css
+
+# Keep media assets referenced by index.html.
+!/screenshots/
+/screenshots/*
+!/screenshots/rag-app.png
+!/screenshots/daycare-app-homepage.png
+!/screenshots/daycare-app-dashboard.png
+!/screenshots/daycare-app-configure.png
+!/screenshots/daycare-app-upload.png
+!/screenshots/password-manager-login.png
+!/screenshots/password-manager-entry-list-screen.png
+!/screenshots/password-manager-edit.png
+!/screenshots/password-manager-entry.png
+!/screenshots/reddit.mp4
+!/screenshots/music player.mp4
+!/screenshots/fling.webm
+!/screenshots/peck.mp4
+
+# Keep the linked NLP final paper, but ignore the rest of the course files.
+!/nlp/
+/nlp/*
+!/nlp/NLP_Final_Project (16).pdf
