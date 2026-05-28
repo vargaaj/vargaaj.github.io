@@ -5,7 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <meta
       name="description"
-      content="AJ Varga's software engineering portfolio featuring mobile apps, full-stack projects, online optimization, and graduate computer science work."
+      content="AJ Varga's software engineering portfolio featuring AI/ML applications, full-stack products, self-hosted infrastructure, mobile apps, and graduate computer science work."
     />
     <title>AJ Varga | Software Engineering Portfolio</title>
     <link rel="stylesheet" href="style.css" />
@@ -47,7 +47,7 @@
 
         <div class="hero-panel" aria-label="Portfolio highlights">
           <div>
-            <span class="metric">3</span>
+            <span class="metric">4</span>
             <span class="metric-label">featured builds</span>
           </div>
           <div>
@@ -145,6 +145,73 @@
               src="screenshots/rag-app.png"
               alt="Local RAG Chat document ingestion and chat interface"
             />
+          </div>
+        </article>
+
+        <article class="project-card featured">
+          <div class="project-copy">
+            <p class="project-kicker">Infrastructure + MLOps</p>
+            <h3>Homelab</h3>
+            <p>
+              A self-hosted infrastructure project that turns a reused desktop
+              into a private MLOps environment. The machine runs Proxmox VE on
+              bare metal, with application workloads designed for an Ubuntu
+              guest running k3s.
+            </p>
+            <p>
+              The first deployed stack supports my local AI workflow: MLflow
+              stores experiment tracking metadata and artifacts, Qdrant keeps
+              durable vector collections, and Tailscale exposes selected
+              Kubernetes services only inside my private tailnet.
+            </p>
+            <div class="project-actions">
+              <a
+                href="https://github.com/vargaaj/homelab"
+                target="_blank"
+                rel="noreferrer"
+                >View on GitHub</a
+              >
+            </div>
+            <ul class="tag-list" aria-label="Homelab technologies">
+              <li>Proxmox VE</li>
+              <li>k3s</li>
+              <li>Kubernetes</li>
+              <li>Kustomize</li>
+              <li>MLflow</li>
+              <li>Qdrant</li>
+              <li>Tailscale</li>
+            </ul>
+          </div>
+          <div class="homelab-diagram" aria-label="Homelab architecture diagram">
+            <div class="lab-node workstation">
+              <span>Workstation</span>
+              <strong>RAG clients + local LLM tooling</strong>
+            </div>
+            <div class="lab-link">SSH / Git / Tailnet</div>
+            <div class="lab-node host">
+              <span>Proxmox VE</span>
+              <strong>Reused desktop host</strong>
+            </div>
+            <div class="lab-stack">
+              <div class="lab-node">
+                <span>k3s Guest</span>
+                <strong>Kubernetes scheduling + PVCs</strong>
+              </div>
+              <div class="lab-services">
+                <div class="lab-service">
+                  <span>MLflow</span>
+                  <strong>tracking + artifacts</strong>
+                </div>
+                <div class="lab-service">
+                  <span>Qdrant</span>
+                  <strong>vector storage</strong>
+                </div>
+              </div>
+            </div>
+            <div class="lab-node access">
+              <span>Tailscale</span>
+              <strong>private LoadBalancer services</strong>
+            </div>
           </div>
         </article>
 
@@ -771,6 +838,120 @@
                 Built an N-body simulation using Barnes-Hut, C++, MPI, and
                 quadtree-based spatial partitioning.
               </p>
+            </article>
+          </div>
+        </article>
+
+        <article class="course-block">
+          <div class="course-summary">
+            <p class="project-kicker">PyTorch + Computer Vision</p>
+            <h3>Deep Learning</h3>
+            <p>
+              Covered the core building blocks and intuitions behind designing,
+              training, tuning, and monitoring deep networks. The course mixed
+              deep learning theory with hands-on PyTorch implementation across
+              computer vision, sequence modeling for natural language
+              processing, deep reinforcement learning, generative modeling, and
+              adversarial learning. Homework assignments built toward a vision
+              and planning stack for a SuperTuxKart racing simulator from
+              scratch.
+            </p>
+          </div>
+
+          <div class="deep-learning-grid">
+            <article class="deep-learning-card">
+              <h4>Assignment 1: PyTorch Foundations</h4>
+              <p>
+                Built the tensor and training basics needed for later neural
+                network assignments.
+              </p>
+              <ul class="detail-list">
+                <li>
+                  Reimplemented compact tensor operations with PyTorch only,
+                  using vectorized tensor APIs under TorchScript-style
+                  constraints.
+                </li>
+                <li>
+                  Implemented a nearest-neighbor classifier with dataset
+                  preprocessing, distance computation, and top-k neighbor
+                  lookup.
+                </li>
+                <li>
+                  Built a simple weather forecasting interface over Austin
+                  temperature measurements using efficient tensor indexing and
+                  aggregation.
+                </li>
+              </ul>
+            </article>
+
+            <article class="deep-learning-card">
+              <h4>Assignment 2: SuperTuxKart Image Classification</h4>
+              <p>
+                Trained deep networks to classify SuperTuxKart objects from
+                image data while monitoring experiments with TensorBoard.
+              </p>
+              <ul class="detail-list">
+                <li>
+                  Implemented classification loss, logging hooks, and a reusable
+                  training pipeline with model, optimizer, data loading,
+                  validation, and checkpoint saving.
+                </li>
+                <li>
+                  Built and trained a linear classifier, multi-layer perceptron,
+                  deeper MLP, and residual MLP in PyTorch.
+                </li>
+                <li>
+                  Tuned learning rates, batch sizes, hidden widths, and network
+                  depth to meet validation accuracy targets on six object
+                  classes.
+                </li>
+              </ul>
+            </article>
+
+            <article class="deep-learning-card">
+              <h4>Assignment 3: CNN Classification and Road Detection</h4>
+              <p>
+                Extended the SuperTuxKart vision system from image-level
+                classification to dense track understanding.
+              </p>
+              <ul class="detail-list">
+                <li>
+                  Implemented convolutional classifiers with data augmentation
+                  for six-class object recognition.
+                </li>
+                <li>
+                  Built a detector that predicts both lane-boundary semantic
+                  segmentation logits and per-pixel depth from driving images.
+                </li>
+                <li>
+                  Trained with combined cross-entropy and depth regression
+                  losses, using mIoU and depth MAE metrics to evaluate road
+                  perception quality.
+                </li>
+              </ul>
+            </article>
+
+            <article class="deep-learning-card">
+              <h4>Assignment 4: Driving Planners</h4>
+              <p>
+                Implemented waypoint planners that convert track geometry or
+                raw images into future vehicle positions for racing control.
+              </p>
+              <ul class="detail-list">
+                <li>
+                  Built an MLP planner that predicts future waypoints from left
+                  and right lane boundary coordinates.
+                </li>
+                <li>
+                  Implemented a Transformer planner using learned waypoint
+                  queries and cross-attention over encoded lane-boundary points.
+                </li>
+                <li>
+                  Built a CNN planner that predicts waypoints directly from
+                  camera images, avoiding an explicit segmentation-to-world
+                  reprojection step.
+                </li>
+              </ul>
             </article>
           </div>
         </article>

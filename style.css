@@ -123,6 +123,7 @@ code {
 
 .hero-content {
   max-width: 760px;
+  min-width: 0;
 }
 
 .eyebrow,
@@ -282,6 +283,11 @@ h4 {
   margin-bottom: 1.75rem;
 }
 
+.intro > *,
+.project-copy {
+  min-width: 0;
+}
+
 .skill-cloud,
 .tag-list {
   display: flex;
@@ -294,12 +300,14 @@ h4 {
 
 .skill-cloud span,
 .tag-list li {
+  max-width: 100%;
   border: 1px solid var(--line);
   border-radius: 999px;
   background: rgba(255, 255, 255, 0.78);
   color: var(--muted);
   font-size: 0.9rem;
   font-weight: 750;
+  overflow-wrap: anywhere;
   padding: 0.45rem 0.75rem;
 }
 
@@ -412,6 +420,89 @@ h4 {
   box-shadow: 0 12px 24px rgba(20, 62, 54, 0.14);
   object-fit: contain;
   object-position: left top;
+}
+
+.homelab-diagram {
+  align-self: stretch;
+  display: grid;
+  gap: 0.85rem;
+  align-content: center;
+  min-height: 360px;
+  padding: clamp(1rem, 3vw, 1.5rem);
+  border: 1px solid var(--line);
+  border-radius: var(--radius);
+  background:
+    linear-gradient(135deg, rgba(13, 148, 136, 0.12), transparent 45%),
+    linear-gradient(180deg, #ffffff 0%, #edf8f4 100%);
+  box-shadow: 0 12px 24px rgba(20, 62, 54, 0.12);
+}
+
+.lab-node,
+.lab-service,
+.lab-link {
+  position: relative;
+  z-index: 1;
+}
+
+.lab-node,
+.lab-service {
+  border: 1px solid rgba(13, 148, 136, 0.22);
+  border-radius: var(--radius);
+  background: rgba(255, 255, 255, 0.88);
+  padding: 0.85rem 1rem;
+  box-shadow: 0 10px 22px rgba(20, 62, 54, 0.09);
+}
+
+.lab-node span,
+.lab-service span {
+  display: block;
+  color: var(--accent-strong);
+  font-size: 0.78rem;
+  font-weight: 850;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+}
+
+.lab-node strong,
+.lab-service strong {
+  display: block;
+  margin-top: 0.25rem;
+  color: var(--ink);
+  font-size: clamp(0.95rem, 1.6vw, 1.08rem);
+  line-height: 1.35;
+}
+
+.lab-link {
+  justify-self: center;
+  border-radius: 999px;
+  background: var(--accent-warm);
+  color: #ffffff;
+  font-size: 0.82rem;
+  font-weight: 800;
+  padding: 0.35rem 0.75rem;
+}
+
+.lab-stack {
+  display: grid;
+  gap: 0.65rem;
+}
+
+.lab-stack > .lab-node {
+  background: rgba(13, 148, 136, 0.1);
+}
+
+.lab-services {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 0.65rem;
+}
+
+.lab-node.host {
+  border-color: rgba(232, 93, 79, 0.36);
+}
+
+.lab-node.access {
+  border-color: rgba(5, 117, 104, 0.4);
 }
 
 .thumbnail-row {
@@ -685,6 +776,7 @@ h4 {
 
   .hero-panel,
   .phone-gallery,
+  .lab-services,
   .assignment-grid,
   .os-project-grid,
   .deep-learning-grid,
@@ -718,8 +810,36 @@ h4 {
     padding-top: 3rem;
   }
 
+  h1 {
+    font-size: 2.12rem;
+    line-height: 1.05;
+  }
+
+  h2 {
+    font-size: 1.65rem;
+  }
+
+  .hero-copy {
+    font-size: 1rem;
+  }
+
+  .skill-cloud,
+  .tag-list {
+    gap: 0.45rem;
+  }
+
+  .skill-cloud span,
+  .tag-list li {
+    font-size: 0.82rem;
+    padding: 0.38rem 0.58rem;
+  }
+
   .nav-links a {
     padding-inline: 0.7rem;
+  }
+
+  .homelab-diagram {
+    min-height: 0;
   }
 
   .project-copy,
